@@ -1,0 +1,46 @@
+.div-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-left: 10%;
+}
+
+.separator {
+    padding-left: 10%;
+    padding-right: 10%;
+}
+
+.about-area {
+    background-color: #A1003F;
+    padding-top: 70px;
+    padding-bottom: 80px;
+}
+
+.title {
+    font-family: Raleway, sans-serif;
+    color: #ffffff;
+    text-align: center;
+    font-size: 48px;
+    padding-bottom: 10px;
+}
+
+.titleh2 {
+    font-family: Raleway, sans-serif;
+    color: #ffffff;
+    font-size: 17px;
+    padding-bottom: 10px;
+}
+
+.text {
+    font-family: "Open Sans", sans-serif;
+    font-size: 14px;
+    color: #C29250;
+    text-align: justify;
+    margin-bottom: 15px;
+}
+
+.name {
+    font-family: "Open Sans", sans-serif;
+    font-size: 14px;
+    color: #ffffff;
+}
