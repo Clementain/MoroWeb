@@ -6,5 +6,5 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  title = 'MoroWeb';
+  title = 'Morole&oacute;n Guanajuato Administraci&oacute;n 2021 -2024';
 }

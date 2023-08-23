@@ -1,0 +1,29 @@
+/* .slider-container{
+    width: 100%;
+} */
+.position{
+    position: absolute;
+}
+
+.slider{
+    background-image: url("../../assets/img/slider/slider1.jpg");
+    background-size: cover;
+    height: 80%;
+    width: 100%;
+    animation: animate 15s infinite;
+}
+
+@keyframes animate {
+    33%{
+        background-image: url("../../assets/img/slider/slider2.jpg");
+        background-size: cover;
+    }
+    66%{
+        background-image: url("../../assets/img/slider/slider3.jpg");
+        background-size: cover;
+    }
+    100%{
+        background-image: url("../../assets/img/slider/slider1.jpg");
+        background-size: cover;
+    }
+}
