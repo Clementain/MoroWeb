@@ -3,6 +3,8 @@
     height: fit-content;
     background-color: #315637;
     position: fixed;
+    top: 0;
+    left: 0;
     z-index: 1000;
 }
 
@@ -22,7 +24,12 @@
     margin-right: 20px;
     height: 80px;
     line-height: 80px;
-    border-bottom: 4px solid #E1C89F;
+    cursor: pointer; 
 
 }
 
+.nav-link.active {
+    text-decoration: underline;
+    font-weight: bolder;
+    font-size: larger;
+}

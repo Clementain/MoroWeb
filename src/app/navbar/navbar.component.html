@@ -1,7 +1,8 @@
 <nav class="navigation-bar">
-    <img class="logo" src="../assets/img/logo.png">
-    <a href="#inicio" class="nav-link">Inicio</a>
-    <a href="#comunicacion" class="nav-link">Comunicaci&oacute;n</a>
-    <a href="#tramiteservicios" class="nav-link">Tr&aacute;mites y Servicios</a>
-    <a href="#contacto" class="nav-link">Contacto</a>
+    <a routerLink="/" class="logo-link"><img class="logo" src="../assets/img/logo.png"></a>
+    <a (click)="setActiveLink('inicio')" class="nav-link" [ngClass]="{ 'active': activeLink === 'inicio' }">Inicio</a>
+    <a (click)="setActiveLink('comunicacion')" class="nav-link" [ngClass]="{ 'active': activeLink === 'comunicacion' }">Comunicaci&oacute;n</a>
+    <a (click)="setActiveLink('tramiteservicios')" class="nav-link" [ngClass]="{ 'active': activeLink === 'tramiteservicios' }">Tr&aacute;mites y Servicios</a>
+    <a (click)="setActiveLink('contacto')" class="nav-link" [ngClass]="{ 'active': activeLink === 'contacto' }">Contacto</a>
 </nav>
+
