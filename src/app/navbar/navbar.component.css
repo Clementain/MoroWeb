@@ -1,10 +1,7 @@
 .navigation-bar {
     width: 100%;
-    /* i'm assuming full width */
-    height: 80px;
-    /* change it to desired width */
+    height: fit-content;
     background-color: #315637;
-    /* change to desired color */
     position: fixed;
     z-index: 1000;
 }
@@ -14,10 +11,9 @@
     vertical-align: top;
     margin-right: 20px;
     margin-top: 15px;
-    /* if you want it vertically middle of the navbar. */
 }
 
-.navigation-bar>a {
+.nav-link {
     text-decoration: none;
     font-weight: 700;
     color: #C29250;
@@ -25,7 +21,8 @@
     vertical-align: top;
     margin-right: 20px;
     height: 80px;
-    /* if you want it to take the full height of the bar */
     line-height: 80px;
-    /* if you want it vertically middle of the navbar */
+    border-bottom: 4px solid #E1C89F;
+
 }
+
