@@ -6,6 +6,7 @@ import { NavbarComponent } from './navbar/navbar.component';
 import { SliderComponent } from './slider/slider.component';
 import { VidMoroComponent } from './vid-moro/vid-moro.component';
 import { SubSectionComponent } from './sub-section/sub-section.component';
+import { AppRoutingModule } from './app-routing.module';
 
 @NgModule({
   declarations: [
@@ -16,7 +17,8 @@ import { SubSectionComponent } from './sub-section/sub-section.component';
     SubSectionComponent,
   ],
   imports: [
-    BrowserModule
+    BrowserModule,
+    AppRoutingModule
   ],
   providers: [],
   bootstrap: [AppComponent]
