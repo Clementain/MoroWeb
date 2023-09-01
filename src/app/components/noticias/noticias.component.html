@@ -1,0 +1,34 @@
+<h2 class="titulo"><i>Boletines Informativos</i></h2>
+<div class="mar">
+    <div class="accordion" id="accordionFlushExample">
+        <div class="accordion-item" *ngFor="let noticia of listNoticias">
+            <h4 class="accordion-header">
+                <button class="accordion-button collapsed tituloB" type="button" data-bs-toggle="collapse"
+                    [attr.data-bs-target]="'#flush-collapse-' + noticia.id" aria-expanded="false"
+                    [attr.aria-controls]="'flush-collapse-' + noticia.id">
+                    {{noticia.titulo}} <p class="fecha">{{noticia.fecha | date: 'dd/MM/yyyy'}}</p>
+                </button>
+            </h4>
+            <div [id]="'flush-collapse-' + noticia.id" class="accordion-collapse collapse"
+                [attr.data-bs-parent]="'#accordionFlushExample'">
+                <div class="accordion-body">
+                    <h2 class="subtitulo">{{noticia.subtitulo}}</h2>
+                    <h3 class="nota">{{noticia.nota}}</h3>
+                    <p class="textos">{{noticia.contenido}}</p>
+                    <img *ngIf="noticia.imagen1 !== undefined && noticia.imagen1 !== 'bnVsbA==' && noticia.imagen1?.trim() !== ''"
+                        [attr.src]="convertBinaryToUrl(noticia.imagen1)" alt="imagen" loading="lazy">
+                    <p class="textos" *ngIf="noticia.notaI1 !== 'null'; else elseBlock">{{ noticia.notaI1 }}</p>
+                    <ng-template #elseBlock>
+                        <br>
+                    </ng-template>
+                    <img *ngIf="noticia.imagen2 !== undefined && noticia.imagen2 !== 'bnVsbA==' && noticia.imagen2?.trim() !== ''"
+                        [attr.src]="convertBinaryToUrl(noticia.imagen2)" alt="imagen" loading="lazy">
+                    <p class="textos" *ngIf="noticia.notaI2 !== 'null'; else elseBlock">{{ noticia.notaI2 }}</p>
+                    <ng-template #elseBlock>
+                        <br>
+                    </ng-template>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
