@@ -1,5 +1,5 @@
 <h2 class="titulo"><i>Boletines Informativos</i></h2>
-<div class="mar">
+<div #accordionContainer class="mar">
     <div class="accordion" id="accordionFlushExample">
         <div class="accordion-item" *ngFor="let noticia of listNoticias">
             <h4 class="accordion-header">
@@ -10,7 +10,8 @@
                 </button>
             </h4>
             <div [id]="'flush-collapse-' + noticia.id" class="accordion-collapse collapse"
-                [attr.data-bs-parent]="'#accordionFlushExample'">
+                [attr.data-bs-parent]="'#accordionFlushExample'"
+                (shown.bs.collapse)="scrollToElement('#flush-collapse-' + noticia.id)">
                 <div class="accordion-body">
                     <h2 class="subtitulo">{{noticia.subtitulo}}</h2>
                     <h3 class="nota">{{noticia.nota}}</h3>
