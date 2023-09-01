@@ -1,5 +1,18 @@
-<app-navbar></app-navbar>
+<nav class="navigation-bar" id="inicio">
+    <a routerLink="/" class="logo-link"><img class="logo" src="../assets/img/logo.png" alt="imagen"></a>
+    <div class="nav-links-container">
+        <a (click)="setActiveLink('inicio')" class="nav-link"
+            [ngClass]="{ 'active': activeLink === 'inicio' }" href="#inicio">Inicio</a>
+        <a (click)="setActiveLink('comunicacion')" class="nav-link"
+            [ngClass]="{ 'active': activeLink === 'comunicacion' }" href="#comunicacion">Comunicaci&oacute;n</a>
+        <a (click)="setActiveLink('tramiteservicios')" class="nav-link"
+            [ngClass]="{ 'active': activeLink === 'tramiteservicios' }">Tr&aacute;mites y Servicios</a>
+        <a (click)="setActiveLink('contacto')" class="nav-link"
+            [ngClass]="{ 'active': activeLink === 'contacto' }">Contacto</a>
+    </div>
+</nav>
 <app-slider></app-slider>
 <app-vid-moro></app-vid-moro>
 <app-sub-section></app-sub-section>
-<app-noticias></app-noticias>
+<app-noticias id="comunicacion"></app-noticias>
+<app-enlaces></app-enlaces>

@@ -1,0 +1,37 @@
+.navigation-bar {
+    width: 100%;
+    height: fit-content;
+    background-color: #315637;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    z-index: 1000;
+    padding: 10px 20px;
+}
+
+.logo {
+    display: inline-block;
+    vertical-align: top;
+    margin-top: 15px;
+}
+
+.nav-links-container {
+    display: flex;
+    align-items: center;
+}
+
+.nav-link {
+    text-decoration: none;
+    font-weight: 700;
+    color: #C29250;
+    margin-left: 20px;
+    cursor: pointer;
+    font-size: 14px;
+    font-family: "Open Sans", sans-serif;
+}
+
+.nav-link.active {
+    text-decoration: underline;
+    font-weight: bolder;
+    font-size: larger;
+}
