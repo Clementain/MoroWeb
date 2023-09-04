@@ -8,6 +8,8 @@ import { SubSectionComponent } from './components/sub-section/sub-section.compon
 import { AppRoutingModule } from './app-routing.module';
 import { NoticiasComponent } from './components/noticias/noticias.component';
 import { EnlacesComponent } from './components/enlaces/enlaces.component';
+import { DirectorioComponent } from './components/directorio/directorio.component';
+import { TramitesServiciosComponent } from './components/tramites-servicios/tramites-servicios.component';
 
 @NgModule({
   declarations: [
@@ -17,6 +19,8 @@ import { EnlacesComponent } from './components/enlaces/enlaces.component';
     SubSectionComponent,
     NoticiasComponent,
     EnlacesComponent,
+    DirectorioComponent,
+    TramitesServiciosComponent,
   ],
   imports: [
     BrowserModule,
