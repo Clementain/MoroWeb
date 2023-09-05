@@ -1,8 +1,8 @@
 <nav class="navigation-bar" id="inicio">
     <a routerLink="/" class="logo-link"><img class="logo" src="../assets/img/logo.png" alt="imagen"></a>
     <div class="nav-links-container">
-        <a (click)="setActiveLink('inicio')" class="nav-link"
-            [ngClass]="{ 'active': activeLink === 'inicio' }" href="#inicio">Inicio</a>
+        <a (click)="setActiveLink('inicio')" class="nav-link" [ngClass]="{ 'active': activeLink === 'inicio' }"
+            href="#inicio">Inicio</a>
         <a (click)="setActiveLink('comunicacion')" class="nav-link"
             [ngClass]="{ 'active': activeLink === 'comunicacion' }" href="#comunicacion">Comunicaci&oacute;n</a>
         <a (click)="setActiveLink('tramiteservicios')" class="nav-link"
@@ -16,3 +16,5 @@
 <app-sub-section></app-sub-section>
 <app-noticias id="comunicacion"></app-noticias>
 <app-enlaces></app-enlaces>
+<app-directorio></app-directorio>
+<app-tramites-servicios></app-tramites-servicios>

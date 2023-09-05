@@ -1,6 +1,6 @@
 <h2 class="titulo"><i>Boletines Informativos</i></h2>
 <div #accordionContainer class="mar">
-    <div class="accordion" id="accordionFlushExample">
+    <div class="accordion" id="noticiasAccordion">
         <div class="accordion-item" *ngFor="let noticia of listNoticias">
             <h4 class="accordion-header">
                 <button class="accordion-button collapsed tituloB" type="button" data-bs-toggle="collapse"
@@ -10,7 +10,7 @@
                 </button>
             </h4>
             <div [id]="'flush-collapse-' + noticia.id" class="accordion-collapse collapse"
-                [attr.data-bs-parent]="'#accordionFlushExample'"
+                [attr.data-bs-parent]="'#noticiasAccordion'"
                 (shown.bs.collapse)="scrollToElement('#flush-collapse-' + noticia.id)">
                 <div class="accordion-body">
                     <h2 class="subtitulo">{{noticia.subtitulo}}</h2>
