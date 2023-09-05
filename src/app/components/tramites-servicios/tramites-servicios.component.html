@@ -16,7 +16,9 @@
                 <p>Dirección: {{encargado.direccion}}</p>
                 <p>Teléfono: {{encargado.telefono}}</p>
                 <div *ngFor="let documento of listDocumentos">
-                    <a href="{{documento.archivoPdf}}">{{documento.nombre}}</a>
+                    <ng-container *ngIf="documento.encargadoId === encargado.id">
+                        <a [attr.href]="convertBinaryToUrl(documento.archivoPdf)">{{documento.nombre}}</a>
+                    </ng-container>
                 </div>
             </div>
         </div>

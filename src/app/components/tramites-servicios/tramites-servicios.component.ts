@@ -44,6 +44,19 @@ export class TramitesServiciosComponent implements OnInit {
     });
   }
 
+  convertBinaryToUrl(binaryValue: string): string | null {
+    if (binaryValue === 'null' || binaryValue === "bnVsbA==") {
+      return null;
+    }
+    const binaryData = atob(binaryValue);
+    const bytes = new Uint8Array(binaryData.length);
+    for (let i = 0; i < binaryData.length; i++) {
+      bytes[i] = binaryData.charCodeAt(i);
+    }
+    const blob = new Blob([bytes], { type: 'document/pdf' });
+    return URL.createObjectURL(blob);
+  }
+
 }
 
 
