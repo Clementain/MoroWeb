@@ -12,7 +12,7 @@ import { EncargadosService } from 'src/app/services/encargados.service';
 export class TramitesServiciosComponent implements OnInit {
   listDocumentos: Documentos[] = [];
   listEncargados: Encargados[] = [];
-  @ViewChild('accordionContainer', { static: true }) accordionContainer!: ElementRef;
+  @ViewChild('accordionContainer2', { static: true }) accordionContainer2!: ElementRef;
 
   constructor(private _documentosService: DocumentosService, private _encargadosService: EncargadosService) { }
 
@@ -22,7 +22,7 @@ export class TramitesServiciosComponent implements OnInit {
   }
 
   scrollToElements(elementId: string) {
-    const element = this.accordionContainer.nativeElement.querySelector(elementId);
+    const element = this.accordionContainer2.nativeElement.querySelector(elementId);
     if (element) {
       element.scrollIntoView({ behavior: 'smooth', block: 'start' });
     }
@@ -53,10 +53,7 @@ export class TramitesServiciosComponent implements OnInit {
     for (let i = 0; i < binaryData.length; i++) {
       bytes[i] = binaryData.charCodeAt(i);
     }
-    const blob = new Blob([bytes], { type: 'document/pdf' });
+    const blob = new Blob([bytes], { type: 'application/pdf' });
     return URL.createObjectURL(blob);
   }
-
 }
-
-
