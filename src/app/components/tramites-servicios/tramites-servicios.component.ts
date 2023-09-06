@@ -12,7 +12,6 @@ import { EncargadosService } from 'src/app/services/encargados.service';
 export class TramitesServiciosComponent implements OnInit {
   listDocumentos: Documentos[] = [];
   listEncargados: Encargados[] = [];
-  @ViewChild('accordionContainer2', { static: true }) accordionContainer2!: ElementRef;
 
   constructor(private _documentosService: DocumentosService, private _encargadosService: EncargadosService) { }
 
@@ -20,14 +19,7 @@ export class TramitesServiciosComponent implements OnInit {
     this.getDocumentos();
     this.getEncargados();
   }
-
-  scrollToElements(elementId: string) {
-    const element = this.accordionContainer2.nativeElement.querySelector(elementId);
-    if (element) {
-      element.scrollIntoView({ behavior: 'smooth', block: 'start' });
-    }
-  }
-
+  
   getDocumentos() {
     this._documentosService.getListDocumentos().subscribe(data => {
       this.listDocumentos = data;

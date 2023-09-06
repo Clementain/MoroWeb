@@ -11,7 +11,7 @@
             </h4>
             <div [id]="'flush-collapse-' + noticia.id" class="accordion-collapse collapse"
                 [attr.data-bs-parent]="'#noticiasAccordion'"
-                (shown.bs.collapse)="scrollToElement('#flush-collapse-' + noticia.id)">
+                >
                 <div class="accordion-body">
                     <h2 class="subtitulo">{{noticia.subtitulo}}</h2>
                     <h3 class="nota">{{noticia.nota}}</h3>
