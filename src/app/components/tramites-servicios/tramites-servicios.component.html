@@ -6,7 +6,8 @@
             <h2 class="accordion-header">
                 <button class="accordion-button collapsed tram" type="button" data-bs-toggle="collapse"
                     [attr.data-bs-target]="'#flush-col-' + encargado.id" aria-expanded="false"
-                    [attr.aria-controls]="'flush-col-' + encargado.id">
+                    [attr.aria-controls]="'flush-col-' + encargado.id"
+                    (click)="getDocumentosByEncargadoId(encargado.id)">
                     {{encargado.tramiteServicio}}
                 </button>
             </h2>
@@ -23,7 +24,7 @@
                     <div *ngFor="let documento of listDocumentos">
                         <ng-container *ngIf="documento.encargadoId === encargado.id">
                             <img class="img-fluid" src="../../../assets/img/iconodocumento.png" alt="icono">
-                            <a class="link" [attr.href]="convertBinaryToUrl(documento.archivoPdf)"
+                            <a class="link" [href]="convertBinaryToPdf(documento.archivoPdf)"
                                 target="_blank">{{documento.nombre}}</a>
                         </ng-container>
                     </div>

@@ -1,4 +1,4 @@
-import { Component, OnInit, ChangeDetectorRef, AfterViewChecked, ElementRef, ViewChild } from '@angular/core';
+import { Component, OnInit, ChangeDetectorRef } from '@angular/core';
 import { Noticias } from 'src/app/interfaces/noticias';
 import { NoticiasService } from 'src/app/services/noticias.service';
 
@@ -7,7 +7,7 @@ import { NoticiasService } from 'src/app/services/noticias.service';
   templateUrl: './noticias.component.html',
   styleUrls: ['./noticias.component.css']
 })
-export class NoticiasComponent implements OnInit, AfterViewChecked {
+export class NoticiasComponent implements OnInit {
   listNoticias: Noticias[] = [];
 
   constructor(private _noticiasService: NoticiasService, private cdr: ChangeDetectorRef) { }
@@ -16,9 +16,6 @@ export class NoticiasComponent implements OnInit, AfterViewChecked {
     this.getNoticias();
   }
 
-  ngAfterViewChecked(): void {
-    this.cdr.detectChanges();
-  }
 
   getNoticias() {
     this._noticiasService.getListNoticias().subscribe(data => {

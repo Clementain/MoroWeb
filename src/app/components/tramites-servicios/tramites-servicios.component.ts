@@ -1,4 +1,4 @@
-import { Component, ElementRef, OnInit, ViewChild } from '@angular/core';
+import { Component, ElementRef, OnInit } from '@angular/core';
 import { Documentos } from 'src/app/interfaces/documentos';
 import { Encargados } from 'src/app/interfaces/encargados';
 import { DocumentosService } from 'src/app/services/documentos.service';
@@ -16,10 +16,9 @@ export class TramitesServiciosComponent implements OnInit {
   constructor(private _documentosService: DocumentosService, private _encargadosService: EncargadosService) { }
 
   ngOnInit(): void {
-    this.getDocumentos();
     this.getEncargados();
   }
-  
+
   getDocumentos() {
     this._documentosService.getListDocumentos().subscribe(data => {
       this.listDocumentos = data;
@@ -36,7 +35,7 @@ export class TramitesServiciosComponent implements OnInit {
     });
   }
 
-  convertBinaryToUrl(binaryValue: string): string | null {
+  convertBinaryToPdf(binaryValue: string): string | null {
     if (binaryValue === 'null' || binaryValue === "bnVsbA==") {
       return null;
     }
@@ -47,5 +46,19 @@ export class TramitesServiciosComponent implements OnInit {
     }
     const blob = new Blob([bytes], { type: 'application/pdf' });
     return URL.createObjectURL(blob);
+  }
+
+  getDocumentosByEncargadoId(encargadoId: number | undefined) {
+    if (encargadoId === undefined) {
+      return;
+    }
+    this._documentosService.getDocumentosByEncargadoId(encargadoId).subscribe(
+      (data) => {
+        this.listDocumentos = data;
+      },
+      (error) => {
+        console.log(error);
+      }
+    );
   }
 }

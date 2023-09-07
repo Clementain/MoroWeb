@@ -14,4 +14,11 @@ export class DocumentosService {
   getListDocumentos(): Observable<any> {
     return this.http.get(this.myAppUrl + this.myApiUrl);
   }
+
+  // documentosservice.ts
+
+  getDocumentosByEncargadoId(encargadoId: number): Observable<any> {
+    return this.http.get(`${this.myAppUrl}${this.myApiUrl}GetDocumentosByEncargadoId?encargadoId=${encargadoId}`);
+  }
+
 }

@@ -1,5 +1,6 @@
 .mar {
-    padding: 20px;
+    padding-left: 10%;
+    padding-right: 10%;
 }
 
 .tram {
@@ -7,37 +8,38 @@
     color: #C29250;
 }
 
-.desc{
-    color:#AAAAAA;
-    font:14px "Open Sans", sans-serif;
+.desc {
+    color: #AAAAAA;
+    font: 14px "Open Sans", sans-serif;
 }
 
-.cargo{
-    color:#C29250;
+.cargo {
+    color: #C29250;
     font: 18px "Open sans", sans-serif;
     font-weight: 600;
 }
 
-.info{
-    color:#666666;
+.info {
+    color: #666666;
     font: 14px "Open sans", sans-serif;
     font-weight: 600;
 }
-.link{
-    color:#555555;
+
+.link {
+    color: #555555;
     font: 14px "Open sans", sans-serif;
     text-decoration: none;
     font-weight: 600;
 }
 
-.titulo{
+.titulo {
     color: #C29250;
     font: 48px Raleway, sans-serif;
     text-align: center;
 }
 
-.mejora{
-    color:#666666;
+.mejora {
+    color: #666666;
     font: 30px Raleway, sans-serif;
     text-align: center;
 }

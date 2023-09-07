@@ -10,7 +10,8 @@
 }
 
 .mar {
-    padding: 20px;
+    padding-left: 10%;
+    padding-right: 10%;
 }
 
 .fecha {
@@ -31,6 +32,7 @@
     text-align: justify;
     font-style: italic;
 }
-.textos{
+
+.textos {
     text-align: justify;
 }
