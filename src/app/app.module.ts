@@ -10,6 +10,10 @@ import { NoticiasComponent } from './components/noticias/noticias.component';
 import { EnlacesComponent } from './components/enlaces/enlaces.component';
 import { DirectorioComponent } from './components/directorio/directorio.component';
 import { TramitesServiciosComponent } from './components/tramites-servicios/tramites-servicios.component';
+import { Slider2Component } from './components/slider2/slider2.component';
+import { ContactoComponent } from './components/contacto/contacto.component';
+import { UbicacionComponent } from './components/ubicacion/ubicacion.component';
+import { FooterComponent } from './components/footer/footer.component';
 
 @NgModule({
   declarations: [
@@ -21,6 +25,10 @@ import { TramitesServiciosComponent } from './components/tramites-servicios/tram
     EnlacesComponent,
     DirectorioComponent,
     TramitesServiciosComponent,
+    Slider2Component,
+    ContactoComponent,
+    UbicacionComponent,
+    FooterComponent,
   ],
   imports: [
     BrowserModule,

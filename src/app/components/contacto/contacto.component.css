@@ -1,0 +1,13 @@
+.titulo {
+    font: 40px Raleway sans-serif;
+    color: #c29250;
+    text-align: center;
+}
+
+.texto {
+    font: 14px "Open Sans" sans-serif;
+    color: #444444;
+    text-align: center;
+    font-weight: bold;
+    font-style: italic;
+}
