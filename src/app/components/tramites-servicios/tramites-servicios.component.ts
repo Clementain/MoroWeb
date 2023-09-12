@@ -1,4 +1,4 @@
-import { Component, ElementRef, OnInit } from '@angular/core';
+import { Component, OnInit, HostListener } from '@angular/core';
 import { Documentos } from 'src/app/interfaces/documentos';
 import { Encargados } from 'src/app/interfaces/encargados';
 import { DocumentosService } from 'src/app/services/documentos.service';
@@ -12,6 +12,8 @@ import { EncargadosService } from 'src/app/services/encargados.service';
 export class TramitesServiciosComponent implements OnInit {
   listDocumentos: Documentos[] = [];
   listEncargados: Encargados[] = [];
+  isLoading: boolean = false; 
+  cachedDocuments: { [key: number]: Documentos[] } = {}; 
 
   constructor(private _documentosService: DocumentosService, private _encargadosService: EncargadosService) { }
 
@@ -52,13 +54,31 @@ export class TramitesServiciosComponent implements OnInit {
     if (encargadoId === undefined) {
       return;
     }
+
+    if (this.cachedDocuments[encargadoId]) {
+      this.listDocumentos = this.cachedDocuments[encargadoId];
+      return;
+    }
+
+    this.isLoading = true; 
     this._documentosService.getDocumentosByEncargadoId(encargadoId).subscribe(
       (data) => {
         this.listDocumentos = data;
+        this.cachedDocuments[encargadoId] = data; 
+        this.isLoading = false; 
       },
       (error) => {
         console.log(error);
+        this.isLoading = false; 
       }
     );
+  }
+
+  clearAllCachedDocuments() {
+    this.cachedDocuments = {};
+  }
+  @HostListener('window:beforeunload', ['$event'])
+  unloadHandler(event: Event) {
+    this.clearAllCachedDocuments();
   }
 }
