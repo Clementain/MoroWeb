@@ -1,7 +1,6 @@
 .navigation-bar {
     width: 100%;
-    height: fit-content;
-    background-color: #315637;
+    background-color: #315637 !important;
     display: flex;
     justify-content: space-between;
     align-items: center;
