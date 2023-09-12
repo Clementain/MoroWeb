@@ -90,3 +90,13 @@
 ::placeholder {
     color: #ffffff
 }
+
+@media (max-width: 554px) {
+    .submit-button {
+        border-radius: 100px !important;
+    }
+
+    #input-field {
+        border-radius: 100px !important;
+    }
+}
