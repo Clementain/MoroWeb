@@ -14,6 +14,7 @@ import { Slider2Component } from './components/slider2/slider2.component';
 import { ContactoComponent } from './components/contacto/contacto.component';
 import { UbicacionComponent } from './components/ubicacion/ubicacion.component';
 import { FooterComponent } from './components/footer/footer.component';
+import { NavbarComponent } from './components/navbar/navbar.component';
 
 @NgModule({
   declarations: [
@@ -29,6 +30,7 @@ import { FooterComponent } from './components/footer/footer.component';
     ContactoComponent,
     UbicacionComponent,
     FooterComponent,
+    NavbarComponent,
   ],
   imports: [
     BrowserModule,
