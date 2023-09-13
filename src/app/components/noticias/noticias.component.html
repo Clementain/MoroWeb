@@ -1,15 +1,15 @@
 <h2 class="titulo"><i>Boletines Informativos</i></h2>
 <div class="row mar">
-    <div class="col-md-3 d-flex justify-content-center">
+    <div class="col-3 d-flex justify-content-center">
         <button class="btn btn-success btn-lg" (click)="filterByYear(null)">TODO</button>
     </div>
-    <div class="col-md-3 d-flex justify-content-center">
+    <div class="col-3 d-flex justify-content-center">
         <button class="btn btn-success btn-lg" (click)="filterByYear('2021')">2021</button>
     </div>
-    <div class="col-md-3 d-flex justify-content-center">
+    <div class="col-3 d-flex justify-content-center">
         <button class="btn btn-success btn-lg" (click)="filterByYear('2022')">2022</button>
     </div>
-    <div class="col-md-3 d-flex justify-content-center">
+    <div class="col-3 d-flex justify-content-center">
         <button class="btn btn-success btn-lg" (click)="filterByYear('2023')">2023</button>
     </div>
 </div>
@@ -29,13 +29,13 @@
                     <h2 class="subtitulo">{{noticia.subtitulo}}</h2>
                     <h3 class="nota">{{noticia.nota}}</h3>
                     <p class="textos">{{noticia.contenido}}</p>
-                    <img *ngIf="noticia.imagen1 !== undefined && noticia.imagen1 !== 'bnVsbA==' && noticia.imagen1?.trim() !== ''"
+                    <img class="img-fluid" *ngIf="noticia.imagen1 !== undefined && noticia.imagen1 !== 'bnVsbA==' && noticia.imagen1?.trim() !== ''"
                         [src]="convertBinaryToUrl(noticia.imagen1)" alt="imagen" loading="lazy">
                     <p class="textos" *ngIf="noticia.notaI1 !== 'null'; else elseBlock">{{ noticia.notaI1 }}</p>
                     <ng-template #elseBlock>
                         <br>
                     </ng-template>
-                    <img *ngIf="noticia.imagen2 !== undefined && noticia.imagen2 !== 'bnVsbA==' && noticia.imagen2?.trim() !== ''"
+                    <img class="img-fluid" *ngIf="noticia.imagen2 !== undefined && noticia.imagen2 !== 'bnVsbA==' && noticia.imagen2?.trim() !== ''"
                         [src]="convertBinaryToUrl(noticia.imagen2)" alt="imagen" loading="lazy">
                     <p class="textos" *ngIf="noticia.notaI2 !== 'null'; else elseBlock">{{ noticia.notaI2 }}</p>
                     <ng-template #elseBlock>
