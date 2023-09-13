@@ -15,11 +15,27 @@
 
 <div class="row justify-content-md-center mar">
     <div class="col-md-4" *ngIf="mostrarTiendas">
-        <img class="img-fluid" src="../../../assets/img/background/bg1.jpg" alt="imagen1">
+        <div class="image-container">
+            <img class="img-fluid" src="../../../assets/img/background/bg1.jpg" alt="imagen1">
+            <div class="overlay">
+                <div class="text">Texto para Tiendas</div>
+            </div>
+        </div>
     </div>
     <div class="col-md-4" *ngIf="mostrarRestaurantes">
-        <img class="img-fluid" src="../../../assets/img/background/bg2.jpg" alt="imagen1">
+        <div class="image-container">
+            <img class="img-fluid" src="../../../assets/img/background/bg2.jpg" alt="imagen2">
+            <div class="overlay">
+                <div class="text">Texto para Restaurantes</div>
+            </div>
+        </div>
     </div>
     <div class="col-md-4" *ngIf="mostrarHoteles">
-        <img class="img-fluid" src="../../../assets/img/background/slider1.jpg" alt="imagen1">
+        <div class="image-container">
+            <img class="img-fluid" src="../../../assets/img/background/slider1.jpg" alt="imagen3">
+            <div class="overlay">
+                <div class="text">Texto para Hoteles</div>
+            </div>
+        </div>
     </div>
+</div>
