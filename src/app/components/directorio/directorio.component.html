@@ -1,1 +1,33 @@
-<p>directorio works!</p>
+<div class="row">
+    <div class="col-md-3 d-flex justify-content-center">
+        <button class="btn btn-success" (click)="mostrarImagenes('todos')">Todos</button>
+    </div>
+    <div class="col-md-3 d-flex justify-content-center">
+        <button class="btn btn-success" (click)="mostrarImagenes('tiendas')">Tiendas</button>
+    </div>
+    <div class="col-md-3 d-flex justify-content-center">
+        <button class="btn btn-success" (click)="mostrarImagenes('restaurantes')">Restaurantes</button>
+    </div>
+    <div class="col-md-3 d-flex justify-content-center">
+        <button class="btn btn-success" (click)="mostrarImagenes('hoteles')">Hoteles</button>
+    </div>
+</div>
+
+<div class="row justify-content-md-center">
+    <div class="col-md-3" *ngIf="mostrarTodos">
+        <img class="img-fluid" src="imagen1.jpg" alt="imagen1">
+        <img class="img-fluid" src="imagen2.jpg" alt="imagen2">
+    </div>
+    <div class="col-md-3" *ngIf="mostrarTiendas">
+        <img class="img-fluid" src="imagen3.jpg" alt="imagen3">
+        <img class="img-fluid" src="imagen4.jpg" alt="imagen4">
+    </div>
+    <div class="col-md-3" *ngIf="mostrarRestaurantes">
+        <img class="img-fluid" src="imagen5.jpg" alt="imagen5">
+        <img class="img-fluid" src="imagen6.jpg" alt="imagen6">
+    </div>
+    <div class="col-md-3" *ngIf="mostrarHoteles">
+        <img class="img-fluid" src="imagen7.jpg" alt="imagen7">
+        <img class="img-fluid" src="imagen8.jpg" alt="imagen8">
+    </div>
+</div>
