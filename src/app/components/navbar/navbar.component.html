@@ -1,4 +1,4 @@
-<nav class="navbar navbar-expand-lg bg-body-tertiary navigation-bar sticky-top">
+<nav id="nve" class="navbar navbar-expand-lg bg-body-tertiary navigation-bar sticky-top">
     <div class="container-fluid">
         <a class="navbar-brand" href="#"><img src="../assets/img/logo.png" alt="Logo"
                 class="d-inline-block align-text-top"></a>
@@ -9,18 +9,18 @@
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
             <ul class="navbar-nav me-auto mb-2 mb-lg-0">
                 <li class="nav-item">
-                    <a (click)="setActiveLink('inicio')" class="nav-link"
+                    <a (click)="scrollTo('inicio')" class="nav-link"
                         [ngClass]="{ 'active': activeLink === 'inicio' }" class="nav-link active" aria-current="page"
                         href="#inicio">Inicio</a>
                 </li>
                 <li class="nav-item">
-                    <a (click)="setActiveLink('comunicacion')" class="nav-link"
+                    <a (click)="scrollTo('comunicacion')" class="nav-link"
                         [ngClass]="{ 'active': activeLink === 'comunicacion' }"
                         href="#comunicacion">Comunicaci&oacute;n</a>
                 </li>
-                <li class="nav-item"> <a (click)="setActiveLink('tramiteservicios')" class="nav-link"
+                <li class="nav-item"> <a (click)="scrollTo('tramiteservicios')" class="nav-link"
                         [ngClass]="{ 'active': activeLink === 'tramiteservicios' }" href="#tramites">Tr&aacute;mites y Servicios</a></li>
-                <li class="nav-item"> <a (click)="setActiveLink('contacto')" class="nav-link"
+                <li class="nav-item"> <a (click)="scrollTo('contacto')" class="nav-link"
                         [ngClass]="{ 'active': activeLink === 'contacto' }" href="#contacto">Contacto</a></li>
             </ul>
         </div>

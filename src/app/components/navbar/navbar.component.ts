@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, ElementRef } from '@angular/core';
 
 @Component({
   selector: 'app-navbar',
@@ -6,9 +6,14 @@ import { Component } from '@angular/core';
   styleUrls: ['./navbar.component.css']
 })
 export class NavbarComponent {
-activeLink: string = '';
+  constructor(private el: ElementRef) { }
+  activeLink: string = '';
 
-  setActiveLink(link: string) {
-    this.activeLink = link;
+  scrollTo(sectionId: string) {
+    this.activeLink = sectionId;
+    const element = document.getElementById(sectionId);
+    if (element) {
+      element.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    }
   }
 }

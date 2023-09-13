@@ -1,12 +1,22 @@
-<app-navbar id="inicio"></app-navbar>
-<app-slider></app-slider>
-<app-vid-moro></app-vid-moro>
-<app-sub-section></app-sub-section>
-<app-noticias id="comunicacion"></app-noticias>
-<app-enlaces></app-enlaces>
-<app-directorio></app-directorio>
-<app-tramites-servicios id="tramites"></app-tramites-servicios>
-<app-slider2></app-slider2>
-<app-contacto id="contacto"></app-contacto>
-<app-ubicacion></app-ubicacion>
+<app-navbar></app-navbar>
+<div data-bs-spy="scroll" data-bs-target="#nve" data-bs-root-margin="0px 0px -40%" data-bs-smooth-scroll="true"
+    class="scrollspy-example bg-body-tertiary p-3 rounded-2" tabindex="0">
+    <div id="inicio">
+        <app-slider></app-slider>
+        <app-vid-moro></app-vid-moro>
+        <app-sub-section></app-sub-section>
+    </div>
+    <div id="comunicacion"><app-noticias></app-noticias>
+        <app-enlaces></app-enlaces>
+        <app-directorio></app-directorio>
+    </div>
+    <div id="tramites">
+        <app-tramites-servicios></app-tramites-servicios>
+        <app-slider2></app-slider2>
+    </div>
+    <div id="contacto">
+        <app-contacto></app-contacto>
+        <app-ubicacion></app-ubicacion>
+    </div>
+</div>
 <app-footer></app-footer>
