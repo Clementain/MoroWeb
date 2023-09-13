@@ -6,19 +6,18 @@ import { Component } from '@angular/core';
   styleUrls: ['./directorio.component.css']
 })
 export class DirectorioComponent {
-  mostrarTodos = false;
-  mostrarTiendas = false;
-  mostrarRestaurantes = false;
-  mostrarHoteles = false;
+  mostrarTiendas = true;
+  mostrarRestaurantes = true;
+  mostrarHoteles = true;
 
   mostrarImagenes(opcion: string) {
-    this.mostrarTodos = false;
     this.mostrarTiendas = false;
     this.mostrarRestaurantes = false;
     this.mostrarHoteles = false;
-
     if (opcion === 'todos') {
-      this.mostrarTodos = true;
+      this.mostrarTiendas = true;
+      this.mostrarRestaurantes = true;
+      this.mostrarHoteles = true;
     } else if (opcion === 'tiendas') {
       this.mostrarTiendas = true;
     } else if (opcion === 'restaurantes') {
