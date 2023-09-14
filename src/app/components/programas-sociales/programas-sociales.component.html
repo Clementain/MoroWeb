@@ -1,0 +1,25 @@
+<div class="mar">
+    <h1 class="titulo">Trámites y Servicios</h1>
+</div>
+<div #accordionContainer3 class="mar">
+    <div class="accordion" id="psAccordion">
+        <div class="accordion-item">
+            <h4 class="accordion-header">
+                <button class="accordion-button collapsed tit" type="button" data-bs-toggle="collapse"
+                    [attr.data-bs-target]="'#flush-collapse-' + 1" aria-expanded="false"
+                    [attr.aria-controls]="'flush-collapse-' + 1">
+                    BECAS CON ALMA 2022
+                </button>
+            </h4>
+            <div [id]="'flush-collapse-'+ 1" class="accordion-collapse collapse" [attr.data-bs-parent]="'#psAccordion'">
+                <div class="accordion-body">
+                    <div *ngFor="let ps of listPS">
+
+                        <img class="img-fluid" src="../../../assets/img/iconodocumento.png" alt="icono">
+                        <a class="link" [href]="convertBinaryToUrl(ps.documento)" target="_blank">{{ps.nombre}}</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

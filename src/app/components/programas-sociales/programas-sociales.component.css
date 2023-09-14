@@ -1,0 +1,25 @@
+.mar {
+    padding-left: 10%;
+    padding-right: 10%;
+    padding-top: 1%;
+    padding-bottom: 1%;
+}
+
+.link {
+    color: #555555;
+    font: 14px "Open sans", sans-serif;
+    text-decoration: none;
+    font-weight: 600;
+}
+
+.tit {
+    font: 18px Raleway, sans-serif;
+    color: #C29250;
+}
+
+.titulo {
+    color: #C29250;
+    font: 48px Raleway, sans-serif;
+    text-align: center;
+}
+

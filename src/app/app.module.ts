@@ -15,6 +15,7 @@ import { ContactoComponent } from './components/contacto/contacto.component';
 import { UbicacionComponent } from './components/ubicacion/ubicacion.component';
 import { FooterComponent } from './components/footer/footer.component';
 import { NavbarComponent } from './components/navbar/navbar.component';
+import { ProgramasSocialesComponent } from './components/programas-sociales/programas-sociales.component';
 
 @NgModule({
   declarations: [
@@ -31,6 +32,7 @@ import { NavbarComponent } from './components/navbar/navbar.component';
     UbicacionComponent,
     FooterComponent,
     NavbarComponent,
+    ProgramasSocialesComponent,
   ],
   imports: [
     BrowserModule,
