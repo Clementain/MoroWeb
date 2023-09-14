@@ -36,3 +36,25 @@
     padding-top: 1%;
     padding-bottom: 1%;
 }
+
+.boton {
+    border-radius: 100px;
+}
+
+.boton:hover {
+    background-color: #A1003F;
+    color: white;
+}
+
+.activo {
+    background-color: #A1003F;
+    color: white;
+}
+
+.titulo {
+    font: 40px Raleway, Sans-Serif;
+    color: #C29250;
+    text-align: center;
+    font-style: italic;
+    font-weight: bold;
+}

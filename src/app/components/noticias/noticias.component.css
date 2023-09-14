@@ -38,3 +38,7 @@
 .textos {
     text-align: justify;
 }
+
+.boton{
+    border-radius: 100px;
+}

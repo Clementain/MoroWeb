@@ -1,19 +1,24 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 
 @Component({
   selector: 'app-directorio',
   templateUrl: './directorio.component.html',
   styleUrls: ['./directorio.component.css']
 })
-export class DirectorioComponent {
+export class DirectorioComponent implements OnInit {
   mostrarTiendas = true;
   mostrarRestaurantes = true;
   mostrarHoteles = true;
-
+  botonActivo: string | null = null;
+  ngOnInit(): void {
+    this.botonActivo = 'todos'
+  }
   mostrarImagenes(opcion: string) {
+    this.botonActivo = opcion;
     this.mostrarTiendas = false;
     this.mostrarRestaurantes = false;
     this.mostrarHoteles = false;
+
     if (opcion === 'todos') {
       this.mostrarTiendas = true;
       this.mostrarRestaurantes = true;
@@ -26,4 +31,6 @@ export class DirectorioComponent {
       this.mostrarHoteles = true;
     }
   }
+
+
 }

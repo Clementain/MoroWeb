@@ -1,0 +1,13 @@
+    .carousel-caption h5,
+    .carousel-caption p {
+        font-size: 24px;
+        text-align: center;
+    }
+
+
+    .blanco {
+        color: #ffffff !important;
+        font-weight: bold!important;
+        font-style: italic!important;
+        font-size: 30px!important;
+    }
