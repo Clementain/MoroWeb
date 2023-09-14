@@ -10,4 +10,5 @@
         font-weight: bold!important;
         font-style: italic!important;
         font-size: 30px!important;
+        -webkit-text-stroke: 1px black;
     }
