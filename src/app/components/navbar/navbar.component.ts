@@ -11,9 +11,5 @@ export class NavbarComponent {
 
   scrollTo(sectionId: string) {
     this.activeLink = sectionId;
-    const element = document.getElementById(sectionId);
-    if (element) {
-      element.scrollIntoView({ behavior: 'smooth', block: 'start' });
-    }
   }
 }
