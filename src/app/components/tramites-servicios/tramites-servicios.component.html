@@ -21,7 +21,7 @@
                     </p>
                     <p class="desc">Teléfono: <span class="info">{{encargado.telefono}}</span>
                     </p>
-                    <div *ngFor="let documento of listDocumentos">
+                    <div *ngFor="let documento of listDocumentos" class="documento-container">
                         <ng-container *ngIf="documento.encargadoId === encargado.id">
                             <img class="img-fluid" src="../../../assets/img/iconodocumento.png" alt="icono">
                             <a class="link" [href]="convertBinaryToPdf(documento.archivoPdf)"

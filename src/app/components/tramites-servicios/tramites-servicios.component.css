@@ -45,3 +45,9 @@
     font: 30px Raleway, sans-serif;
     text-align: center;
 }
+
+.documento-container {
+    display: flex;
+    align-items: center;
+    margin-bottom: 10px;
+}
