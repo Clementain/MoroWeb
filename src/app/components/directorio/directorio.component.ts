@@ -10,9 +10,12 @@ export class DirectorioComponent implements OnInit {
   mostrarRestaurantes = true;
   mostrarHoteles = true;
   botonActivo: string | null = null;
+  imagenAmpliada: string | null = null;
+
   ngOnInit(): void {
-    this.botonActivo = 'todos'
+    this.botonActivo = 'todos';
   }
+
   mostrarImagenes(opcion: string) {
     this.botonActivo = opcion;
     this.mostrarTiendas = false;
@@ -32,5 +35,11 @@ export class DirectorioComponent implements OnInit {
     }
   }
 
+  mostrarImagenAmpliada(categoria: string) {
+    this.imagenAmpliada = categoria;
+  }
 
+  cerrarImagenAmpliada() {
+    this.imagenAmpliada = null;
+  }
 }

@@ -20,34 +20,50 @@
     </div>
 </div>
 
-
-
 <div class="row justify-content-md-center mar">
     <div class="col-md-4" *ngIf="mostrarHoteles">
         <div class="image-container">
-            <img class="img-fluid" src="../../../assets/img/portfolio/1.jpg" alt="imagen1">
-            <div class="overlay">
+            <img class="img-fluid" src="../../../assets/img/portfolio/1.jpg" alt="imagen1"
+                (click)="mostrarImagenAmpliada('hotel')">
+            <div class="overlay" (click)="mostrarImagenAmpliada('hotel')">
                 <div class="text">HOTEL</div>
                 <div class="text">Hotel excelencia de América</div>
             </div>
         </div>
+        <!-- Mostrar la imagen ampliada solo si imagenAmpliada es 'hotel' -->
+        <div *ngIf="imagenAmpliada === 'hotel'" class="imagen-ampliada" (click)="cerrarImagenAmpliada()">
+            <img class="img-fluid" src="../../../assets/img/portfolio/1.jpg" alt="imagen1">
+            <div class="cerrar">&times;</div>
+        </div>
     </div>
     <div class="col-md-4" *ngIf="mostrarRestaurantes">
         <div class="image-container">
-            <img class="img-fluid" src="../../../assets/img/portfolio/2.jpg" alt="imagen2">
-            <div class="overlay">
+            <img class="img-fluid" src="../../../assets/img/portfolio/2.jpg" alt="imagen2"
+                (click)="mostrarImagenAmpliada('restaurante')">
+            <div class="overlay" (click)="mostrarImagenAmpliada('restaurante')">
                 <div class="text">RESTAURANTE</div>
                 <div class="text">Le Gran Bistro</div>
             </div>
         </div>
+        <!-- Mostrar la imagen ampliada solo si imagenAmpliada es 'restaurante' -->
+        <div *ngIf="imagenAmpliada === 'restaurante'" class="imagen-ampliada" (click)="cerrarImagenAmpliada()">
+            <img class="img-fluid" src="../../../assets/img/portfolio/2.jpg" alt="imagen2">
+            <div class="cerrar">&times;</div>
+        </div>
     </div>
     <div class="col-md-4" *ngIf="mostrarHoteles">
         <div class="image-container">
-            <img class="img-fluid" src="../../../assets/img/portfolio/3.jpg" alt="imagen3">
-            <div class="overlay">
+            <img class="img-fluid" src="../../../assets/img/portfolio/3.jpg" alt="imagen3"
+                (click)="mostrarImagenAmpliada('hotel')">
+            <div class="overlay" (click)="mostrarImagenAmpliada('hotel')">
                 <div class="text">HOTEL</div>
                 <div class="text">Hotel La Parroquia</div>
             </div>
+        </div>
+        <!-- Mostrar la imagen ampliada solo si imagenAmpliada es 'hotel' -->
+        <div *ngIf="imagenAmpliada === 'hotel'" class="imagen-ampliada" (click)="cerrarImagenAmpliada()">
+            <img class="img-fluid" src="../../../assets/img/portfolio/3.jpg" alt="imagen3">
+            <div class="cerrar">&times;</div>
         </div>
     </div>
 </div>
