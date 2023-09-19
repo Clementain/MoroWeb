@@ -13,7 +13,21 @@
 </head>
 
 <body>
+  <div id="loader">
+    <div class="d-flex justify-content-center align-items-center vh-100">
+      <img src="assets/img/preloader.gif" alt="Preloader" class="spinner">
+    </div>
+  </div>
   <app-root></app-root>
+  <script>
+    document.getElementById('loader').style.display = 'block';
+
+    window.onload = function () {
+      setTimeout(function () {
+        document.getElementById('loader').style.display = 'none';
+      }, 3000);
+    };
+  </script>
 </body>
 
 </html>
