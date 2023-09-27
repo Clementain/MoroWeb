@@ -7,7 +7,7 @@ import { Observable } from 'rxjs';
 })
 export class ProgramasSocialesService {
 
-  private myAppUrl = 'https://localhost:7057/';
+  private myAppUrl = 'http://localhost:90/';
   private myApiUrl = 'api/programasocial/';
   constructor(private http: HttpClient) { }
 

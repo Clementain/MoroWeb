@@ -7,7 +7,7 @@ import { Observable } from 'rxjs';
   providedIn: 'root'
 })
 export class EncargadosService {
-  private myAppUrl = 'https://localhost:7057/';
+  private myAppUrl = 'http://localhost:90/';
   private myApiUrl = 'api/encargado/';
   constructor(private http: HttpClient) { }
 
