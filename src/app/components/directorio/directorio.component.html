@@ -3,67 +3,40 @@
 </div>
 <div class="row mar">
     <div class="col-md-3 col-sm-6 d-flex justify-content-center">
-        <button class="btn btn-outline-secondary boton" (click)="mostrarImagenes('todos')"
-            [ngClass]="{'activo': botonActivo === 'todos'}">Todos</button>
+        <button class="btn btn-outline-secondary boton" (click)="mostrarImagenes('TODOS')"
+            [ngClass]="{'activo': botonActivo === 'TODOS'}">Todos</button>
     </div>
     <div class="col-md-3 col-sm-6 d-flex justify-content-center">
-        <button class="btn btn-outline-secondary boton" (click)="mostrarImagenes('hoteles')"
-            [ngClass]="{'activo': botonActivo === 'hoteles'}">Hoteles</button>
+        <button class="btn btn-outline-secondary boton" (click)="mostrarImagenes('HOTEL')"
+            [ngClass]="{'activo': botonActivo === 'HOTEL'}">Hoteles</button>
     </div>
     <div class="col-md-3 col-sm-6 d-flex justify-content-center">
-        <button class="btn btn-outline-secondary boton" (click)="mostrarImagenes('restaurantes')"
-            [ngClass]="{'activo': botonActivo === 'restaurantes'}">Restaurantes</button>
+        <button class="btn btn-outline-secondary boton" (click)="mostrarImagenes('RESTAURANTE')"
+            [ngClass]="{'activo': botonActivo === 'RESTAURANTE'}">Restaurantes</button>
     </div>
     <div class="col-md-3 col-sm-6 d-flex justify-content-center">
-        <button class="btn btn-outline-secondary boton" (click)="mostrarImagenes('tiendas')"
-            [ngClass]="{'activo': botonActivo === 'tiendas'}">Tiendas</button>
+        <button class="btn btn-outline-secondary boton" (click)="mostrarImagenes('TIENDA')"
+            [ngClass]="{'activo': botonActivo === 'TIENDA'}">Tiendas</button>
     </div>
 </div>
 
 <div class="row justify-content-md-center mar">
-    <div class="col-md-4" *ngIf="mostrarHoteles">
-        <div class="image-container">
-            <img class="img-fluid" src="../../../assets/img/portfolio/1.jpg" alt="imagen1"
-                (click)="mostrarImagenAmpliada('hotel')">
-            <div class="overlay" (click)="mostrarImagenAmpliada('hotel')">
-                <div class="text">HOTEL</div>
-                <div class="text">Hotel excelencia de América</div>
+    <ng-container *ngFor="let dire of listDirectorios ">
+        <div class="col-md-4 mb-3" *ngIf="dire.tipo === 'TIENDA' && mostrarTIENDA || 
+        dire.tipo === 'RESTAURANTE' && mostrarRESTAURANTE || 
+        dire.tipo === 'HOTEL' && mostrarHOTEL">
+            <div class="image-container">
+                <img class="img-fluid" [src]="convertBinaryToUrl(dire.imagen)" alt="imagen"
+                    (click)="mostrarImagenAmpliada(dire.imagen)">
+                <div class="overlay" (click)="mostrarImagenAmpliada(dire.imagen)">
+                    <div class="text">{{dire.tipo}}</div>
+                    <div class="text">{{dire.descripcion}}</div>
+                </div>
+            </div>
+            <div *ngIf="imagenAmpliada" class="imagen-ampliada" (click)="cerrarImagenAmpliada()">
+                <img class="img-fluid" [src]="convertBinaryToUrl(imagenAmpliadaUrl)" alt="imagen">
+                <div class="cerrar">&times;</div>
             </div>
         </div>
-        <!-- Mostrar la imagen ampliada solo si imagenAmpliada es 'hotel' -->
-        <div *ngIf="imagenAmpliada === 'hotel'" class="imagen-ampliada" (click)="cerrarImagenAmpliada()">
-            <img class="img-fluid" src="../../../assets/img/portfolio/1.jpg" alt="imagen1">
-            <div class="cerrar">&times;</div>
-        </div>
-    </div>
-    <div class="col-md-4" *ngIf="mostrarRestaurantes">
-        <div class="image-container">
-            <img class="img-fluid" src="../../../assets/img/portfolio/2.jpg" alt="imagen2"
-                (click)="mostrarImagenAmpliada('restaurante')">
-            <div class="overlay" (click)="mostrarImagenAmpliada('restaurante')">
-                <div class="text">RESTAURANTE</div>
-                <div class="text">Le Gran Bistro</div>
-            </div>
-        </div>
-        <!-- Mostrar la imagen ampliada solo si imagenAmpliada es 'restaurante' -->
-        <div *ngIf="imagenAmpliada === 'restaurante'" class="imagen-ampliada" (click)="cerrarImagenAmpliada()">
-            <img class="img-fluid" src="../../../assets/img/portfolio/2.jpg" alt="imagen2">
-            <div class="cerrar">&times;</div>
-        </div>
-    </div>
-    <div class="col-md-4" *ngIf="mostrarHoteles">
-        <div class="image-container">
-            <img class="img-fluid" src="../../../assets/img/portfolio/3.jpg" alt="imagen3"
-                (click)="mostrarImagenAmpliada('hotel')">
-            <div class="overlay" (click)="mostrarImagenAmpliada('hotel')">
-                <div class="text">HOTEL</div>
-                <div class="text">Hotel La Parroquia</div>
-            </div>
-        </div>
-        <!-- Mostrar la imagen ampliada solo si imagenAmpliada es 'hotel' -->
-        <div *ngIf="imagenAmpliada === 'hotel'" class="imagen-ampliada" (click)="cerrarImagenAmpliada()">
-            <img class="img-fluid" src="../../../assets/img/portfolio/3.jpg" alt="imagen3">
-            <div class="cerrar">&times;</div>
-        </div>
-    </div>
+    </ng-container>
 </div>
