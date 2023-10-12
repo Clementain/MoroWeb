@@ -8,7 +8,7 @@ import { Observable } from 'rxjs';
 })
 export class EncargadosService {
   private myAppUrl = 'http://localhost:90/';
-  private myApiUrl = 'api/encargado/';
+  private myApiUrl = 'api/encargadop/';
   constructor(private http: HttpClient) { }
 
   getListEncargados(): Observable<any> {

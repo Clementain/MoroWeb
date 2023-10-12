@@ -7,7 +7,7 @@ import { Observable } from 'rxjs';
 })
 export class NoticiasService {
   private myAppUrl = 'http://localhost:90/';
-  private myApiUrl = 'api/noticia/';
+  private myApiUrl = 'api/noticiap/';
   constructor(private http: HttpClient) { }
 
   getListNoticias(): Observable<any> {

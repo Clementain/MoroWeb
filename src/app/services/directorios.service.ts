@@ -8,7 +8,7 @@ import { Observable } from 'rxjs';
 export class DirectoriosService {
 
   private myAppUrl = 'http://localhost:90/';
-  private myApiUrl = 'api/directorio/';
+  private myApiUrl = 'api/directoriop/';
   constructor(private http: HttpClient) { }
 
   getListdirectorios(): Observable<any> {

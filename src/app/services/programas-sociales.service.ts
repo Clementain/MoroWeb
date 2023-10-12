@@ -8,7 +8,7 @@ import { Observable } from 'rxjs';
 export class ProgramasSocialesService {
 
   private myAppUrl = 'http://localhost:90/';
-  private myApiUrl = 'api/programasocial/';
+  private myApiUrl = 'api/programasocialp/';
   constructor(private http: HttpClient) { }
 
   getListPS(): Observable<any> {

@@ -7,7 +7,7 @@ import { Observable } from 'rxjs';
 })
 export class DocumentosService {
   private myAppUrl = 'http://localhost:90/';
-  private myApiUrl = 'api/documento/';
+  private myApiUrl = 'api/documentop/';
 
   constructor(private http: HttpClient) { }
 
