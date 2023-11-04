@@ -3,4 +3,5 @@ export interface Directorios {
     tipo: string;
     descripcion: string;
     imagen: string;
+    direccion: string;
 }

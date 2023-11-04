@@ -2,35 +2,42 @@
     <h2 class="titulo">Directorio De Empresas</h2>
 </div>
 <div class="row mar">
-    <div class="col-md-3 col-sm-6 d-flex justify-content-center">
-        <button class="btn btn-outline-secondary boton" (click)="mostrarImagenes('TODOS')"
-            [ngClass]="{'activo': botonActivo === 'TODOS'}">Todos</button>
-    </div>
-    <div class="col-md-3 col-sm-6 d-flex justify-content-center">
-        <button class="btn btn-outline-secondary boton" (click)="mostrarImagenes('HOTEL')"
-            [ngClass]="{'activo': botonActivo === 'HOTEL'}">Hoteles</button>
-    </div>
-    <div class="col-md-3 col-sm-6 d-flex justify-content-center">
-        <button class="btn btn-outline-secondary boton" (click)="mostrarImagenes('RESTAURANTE')"
-            [ngClass]="{'activo': botonActivo === 'RESTAURANTE'}">Restaurantes</button>
-    </div>
-    <div class="col-md-3 col-sm-6 d-flex justify-content-center">
-        <button class="btn btn-outline-secondary boton" (click)="mostrarImagenes('TIENDA')"
-            [ngClass]="{'activo': botonActivo === 'TIENDA'}">Tiendas</button>
-    </div>
+    <label for="dire" class="form-label">Selecciona un tipo de empresa:</label>
+    <select class="form-select" id="dire" (change)="mostrarImagenes($event)">
+        <option value="TODOS">Todos</option>
+        <option selected value="HOTEL">Hoteles</option>
+        <option value="RESTAURANTE">Restaurantes</option>
+        <option value="TIENDA">Tiendas</option>
+        <option value="AGENCIA DE MOTOS">Agencias de motos</option>
+        <option value="BAR">Bares</option>
+        <option value="HOSPITAL">Hospitales</option>
+        <option value="DOCTOR">Doctores</option>
+        <option value="URGENCIAS">Urgencias</option>
+        <option value="CAFETERIA">Cafeterías</option>
+        <option value="SUPER MERCADO">Super mercados</option>
+        <option value="ZAPATERIA">Zapaterías</option>
+        <option value="MUEBLERIA">Mueblerías</option>
+        <option value="FUNERARIA">Funerarias</option>
+        <option value="ESCUELA">Escuelas</option>
+        <option value="VETERINARIA">Veterinarias</option>
+        <option value="CARNICERIA">Carnicerías</option>
+        <option value="MOTO PARTES">Moto partes</option>
+        <option value="CLUB DE MOTOS">Club de motos</option>
+    </select>
 </div>
+
 
 <div class="row justify-content-md-center mar">
     <ng-container *ngFor="let dire of listDirectorios ">
-        <div class="col-md-4 mb-3" *ngIf="dire.tipo === 'TIENDA' && mostrarTIENDA || 
-        dire.tipo === 'RESTAURANTE' && mostrarRESTAURANTE || 
-        dire.tipo === 'HOTEL' && mostrarHOTEL">
+        <div class="col-md-4 mb-3"
+            *ngIf="dire.tipo === 'TIENDA' && mostrarTIENDA || dire.tipo === 'RESTAURANTE' && mostrarRESTAURANTE || dire.tipo === 'HOTEL' && mostrarHOTEL || dire.tipo==='AGENCIA DE MOTOS' && mostrarAGENCIADEMOTOS|| dire.tipo==='BAR' && mostrarBAR || dire.tipo==='HOSPITAL'&& mostrarHOSPITAL || dire.tipo==='DOCTOR'&&mostrarDOCTOR|| dire.tipo==='URGENCIAS'&&mostrarURGENCIAS||dire.tipo==='CAFETERIA'&&mostrarCAFETERIA||dire.tipo==='SUPER MERCADO'&&mostrarSUPERMERCADO||dire.tipo==='ZAPATERIA'&& mostrarZAPATERIA|| dire.tipo==='MUEBLERIA'&&mostrarMUEBLERIA||dire.tipo==='FUNERARIA'&&mostrarFUNERARIA||dire.tipo==='ESCUELA'&&mostrarESCUELA||dire.tipo==='VETERINARIA'&&mostrarVETERINARIA||dire.tipo==='CARNICERIA'&&mostrarCARNICERIA||dire.tipo==='MOTO PARTES'&&mostrarMOTOPARTES||dire.tipo==='CLUB DE MOTOS'&& mostrarCLUBDEMOTOS">
             <div class="image-container">
                 <img class="img-fluid" [src]="convertBinaryToUrl(dire.imagen)" alt="imagen"
                     (click)="mostrarImagenAmpliada(dire.imagen)">
                 <div class="overlay" (click)="mostrarImagenAmpliada(dire.imagen)">
                     <div class="text">{{dire.tipo}}</div>
                     <div class="text">{{dire.descripcion}}</div>
+                    <div class="text"><a href="{{dire.direccion}}" target="_blank">Ve la ubicación aqui</a></div>
                 </div>
             </div>
             <div *ngIf="imagenAmpliada" class="imagen-ampliada" (click)="cerrarImagenAmpliada()">
