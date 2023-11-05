@@ -1,0 +1,44 @@
+.titulo {
+    font: 40px Raleway, Sans-Serif;
+    color: #C29250;
+    text-align: center;
+}
+
+.tituloB {
+    font: 18px Raleway, Sans-Serif;
+    color: #C29250;
+}
+
+.mar {
+    padding-left: 10%;
+    padding-right: 10%;
+    padding-top: 1%;
+    padding-bottom: 1%;
+}
+
+.fecha {
+    font: 13px Raleway, Sans-Serif;
+    color: #999999;
+    text-align: center;
+    padding-left: 10px;
+}
+
+.subtitulo {
+    font: 32px "Open Sans", Sans-Serif;
+    color: #C29250;
+}
+
+.nota {
+    font: 18px "Open Sans", Sans-Serif;
+    color: #333333;
+    text-align: justify;
+    font-style: italic;
+}
+
+.textos {
+    text-align: justify;
+}
+
+.boton {
+    border-radius: 100px;
+}

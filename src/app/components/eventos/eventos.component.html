@@ -1,0 +1,36 @@
+<h2 class="titulo"><i>Eventos</i></h2>
+<div #accordionContainer7 class="mar">
+    <div class="accordion" id="eventosAccordion">
+        <div class="accordion-item" *ngFor="let evento of listeventos">
+            <h4 class="accordion-header">
+                <button class="accordion-button collapsed tituloB" type="button" data-bs-toggle="collapse"
+                    [attr.data-bs-target]="'#flush-collapse-' + evento.id" aria-expanded="false"
+                    [attr.aria-controls]="'flush-collapse-' + evento.id">
+                    {{evento.titulo}} <p class="fecha">{{evento.fecha | date: 'dd/MM/yyyy'}}</p>
+                </button>
+            </h4>
+            <div [id]="'flush-collapse-' + evento.id" class="accordion-collapse collapse"
+                [attr.data-bs-parent]="'#eventosAccordion'">
+                <div class="accordion-body">
+                    <h2 class="subtitulo">{{evento.subtitulo}}</h2>
+                    <h3 class="nota">{{evento.nota}}</h3>
+                    <p class="textos">{{evento.contenido}}</p>
+                    <img class="img-fluid"
+                        *ngIf="evento.imagen1 !== undefined && evento.imagen1 !== 'bnVsbA==' && evento.imagen1?.trim() !== ''"
+                        [src]="convertBinaryToUrl(evento.imagen1)" alt="imagen" loading="lazy">
+                    <p class="textos" *ngIf="evento.notaI1 !== 'null'; else elseBlock">{{ evento.notaI1 }}</p>
+                    <ng-template #elseBlock>
+                        <br>
+                    </ng-template>
+                    <img class="img-fluid"
+                        *ngIf="evento.imagen2 !== undefined && evento.imagen2 !== 'bnVsbA==' && evento.imagen2?.trim() !== ''"
+                        [src]="convertBinaryToUrl(evento.imagen2)" alt="imagen" loading="lazy">
+                    <p class="textos" *ngIf="evento.notaI2 !== 'null'; else elseBlock">{{ evento.notaI2 }}</p>
+                    <ng-template #elseBlock>
+                        <br>
+                    </ng-template>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
